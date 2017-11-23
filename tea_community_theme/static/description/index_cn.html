@@ -1,0 +1,238 @@
+<code style="display:none">
+    <![CDATA[
+    <script>
+        $(document).ready(function(){
+            $("meta[charset='utf-8']").remove();
+            $("head").append('<meta charset="utf-8" />');
+        });
+    </script>
+    <style type="text/css">
+
+    </style>
+    ]]>
+
+</code>
+
+<div style="
+    border: 0;
+    margin: 40px 0;
+    height: 4px;
+    border-top: #ddd 1px solid;
+    border-bottom: #ddd 1px solid;
+    text-align: center;
+    position: relative;
+    clear: both;"><i class="fa fa-star fa-2x" style="
+    color: #bbb;
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin: 0 auto 0 -25px;"></i></div>
+
+<section class="oe_container" style="font-family: 'Lato', 'Open Sans', 'Helvetica', Sans;">
+    <div class="oe_row">
+        <h2 class="oe_slogan">声明和承诺</h2>
+        <div class="separator" style="display: block;width: 60px;height: 5px;margin: 15px auto 15px;background-color: #d31010;position: relative; border: 1px solid #d3b61c;"></div>
+        <div class="oe_span3">
+            <h3>指定销售淘宝店铺</h3>
+            <a class="btn btn-primary btn-lg mt8" style="color: #FFFFFF !important;" href="https://zhiyinsoft.taobao.com/?spm=2013.1.1000126.3.8OPm0m" target="_blank"><i class="fa fa-home"></i>芷茵网络</a>
+        </div>
+        <div class="oe_span3">
+            <h3>QQ群</h3>
+            <a class="btn btn-primary btn-lg mt8" style="color: #FFFFFF !important;" target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=d8721584727be4591acb005695abfa3bf3cb53e5b88b3f0386f1acbf2958b249">
+                <i class="fa fa-qq"></i>
+                <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="tea_community_theme" title="tea_community_theme">
+            </a>
+
+        </div>
+        <div class="oe_span6">
+            <h3>承诺及免责</h3>
+            <ul style="line-height: 1.7;">
+                <li>
+                    凡在指定淘宝店铺购买的本样式的客户，凭订单后均享受我们售后服务及相关指导，并保证软件包的安全。
+                </li>
+                <li>
+                    凡在指定淘宝店铺购买的本样式的客户，可加入Tea Community Theme的QQ群，及时获取最新的代码。
+                </li>
+                <li>
+                    非本店铺售卖的样式，我方团队概不提供相关服务，由其他渠道获得的软件包，本团队概不负责及保证其安全问题带来的后果。
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div style="border: 0;margin: 40px 0;height: 4px;border-top: #ddd 1px solid;border-bottom: #ddd 1px solid;text-align: center;position: relative;clear: both;">
+    <i class="fa fa-star fa-2x" style="
+    color: #bbb;
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin: 0 auto 0 -25px;"></i>
+</div>
+
+
+<section class="oe_container" style="font-family: 'Lato', 'Open Sans', 'Helvetica', Sans;">
+    <div class="oe_row">
+        <h2 class="oe_slogan">如何自定义</h2>
+        <div class="separator" style="display: block;width: 60px;height: 5px;margin: 15px auto 15px;background-color: #d3b61c;position: relative; border: 1px solid #d3b61c;"></div>
+
+        <div class="row" style="color: #444;margin-top: 15px;">
+            <div class="col-md-12">
+                <ul style="line-height: 1.7;">
+                    <li>
+                        <h3>不显示侧边栏的操作</h3>
+                        找到和打开文件 <b style="background:#000;color: #fff;border-bottom: #000 1px solid;">
+                        /templates/assets.xml
+                    </b>,并注释掉以内容
+                        <pre>
+&lt;link rel="stylesheet" type="text/less" href="/tea_community_theme/static/src/less/webclient_layout_have_sidebar.less"/&gt;
+
+&lt;script&gt; type="text/javascript" src="/tea_community_theme/static/src/js/sidebar.js"/&gt;
+
+</pre>取消注释以下内容
+                        <pre>
+&lt;link rel="stylesheet" type="text/less" href="/tea_community_theme/static/src/less/webclient_layout_no_sidebar.less"/&gt;
+
+&lt;xpath expr="//div[hasclass('o_main')]" position="replace"/&gt;
+                        </pre>
+                        找到和打开文件 <b style="background:#000;color: #fff;border-bottom: #000 1px solid;">
+                        __manifest__.py
+                    </b>,并注释掉以内容
+                        <pre>
+'templates/backend.xml',
+                        </pre>
+                        找到和打开文件 <b style="background:#000;color: #fff;border-bottom: #000 1px solid;">
+                        /static/src/js/web_client.js
+                    </b>,第147行并取消注释掉以内容
+                        <pre>
+set_action_manager: function () {
+            this.action_manager = new ActionManager(this, {webclient: this});
+            return this.action_manager.appendTo(this.$el);
+        },
+                        </pre>
+                    </li>
+                    <li>
+                        <h3>显示侧边栏的操作</h3>
+                        不显示侧边栏的反操作
+                    </li>
+                    <li>
+                        <h3>不显示切换器按钮的操作</h3>
+                        找到和打开文件 <b style="background:#000;color: #fff;border-bottom: #000 1px solid;">
+                        /static/src/less/navbar.less
+                    </b>,第5行并取消注释掉以内容
+                        <pre>
+> a, > button{
+
+        @media (min-width: @screen-sm-max) {
+            display: none !important;
+        }
+        @media (max-width: @screen-sm-min) {
+            display: inline-block !important;
+        }
+    }
+
+                        </pre>
+                    </li>
+                    <li>
+                        <h3>显示切换器按钮的操作</h3>
+                        不显示切换器按钮的操作的反操作
+                    </li>
+                    <li>
+                        <h3>自定义登录页面背景图片</h3>
+                        找到和打开文件 <b style="background:#000;color: #fff;border-bottom: #000 1px solid;">/static/src/js/login.js</b>
+                        <pre>
+$.backstretch([
+    "/tea_community_theme/static/src/img/bg/1.jpg",
+    "/tea_community_theme/static/src/img/bg/2.jpg",
+    "/tea_community_theme/static/src/img/bg/3.jpg",
+    "/tea_community_theme/static/src/img/bg/4.jpg"
+    ], {
+        fade: 1000,
+        duration: 8000
+        }
+    );
+</pre>
+                    </li>
+                    <li>
+                        <h3>自定义 Navbar 背景颜色</h3>
+                        找到和打开文件<b style="background:#000;color: #fff;border-bottom: #000 1px solid;">/static/src/less/variables.less</b>
+                        <pre class="prettyprint linenums">
+@odoo-brand-primary: #4F5A67;
+</pre>
+                    </li>
+                    <li>
+                        <h3>自定义 Sidebar 背景颜色</h3>
+                        找到和打开文件<b style="background:#000;color: #fff;border-bottom: #000 1px solid;">/static/src/less/sidebar.less</b>
+                        <pre class="prettyprint linenums">
+@odoo-sidebar-bg: #5E6672;
+</pre>
+                    </li>
+                    <li>
+                        <h3>显示和隐藏footer</h3>
+                        找到和打开文件<b style="background:#000;color: #fff;border-bottom: #000 1px solid;">/templates/backend.xml</b>
+                        <br/>
+                        默认不显示
+                        <br/>
+                        取消注释可以显示footer
+                        <pre class="prettyprint linenums">
+div class="o_footer"
+</pre>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="
+    border: 0;
+    margin: 40px 0;
+    height: 4px;
+    border-top: #ddd 1px solid;
+    border-bottom: #ddd 1px solid;
+    text-align: center;
+    position: relative;
+    clear: both;"><i class="fa fa-star fa-2x" style="
+    color: #bbb;
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin: 0 auto 0 -25px;"></i></div>
+
+<section class="oe_container oe_dark">
+    <div class="oe_mt16 oe_mb16">
+        <h2 class="oe_slogan">需要帮助?</h2>
+    </div>
+    <div class="oe_slogan">
+        <a class="btn btn-primary btn-lg mt8" style="color: #FFFFFF !important;" href="mailto:rain.wen@outlook.com" target="_blank"><i class="fa fa-envelope"></i> Email </a>
+        <a class="btn btn-primary btn-lg mt8" style="color: #FFFFFF !important;" href="http://wpa.qq.com/msgrd?v=3&uin=249468566&site=qq&menu=yes" target="_blank">
+            <i class="fa fa-qq"></i>
+            开发者QQ
+        </a>
+    </div>
+</section>
